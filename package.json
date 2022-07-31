@@ -1,6 +1,6 @@
 {
-  "name": "@leax/result-ts",
-  "version": "1.0.0",
+  "name": "@maxime9812/result-ts",
+  "version": "1.0.1",
   "description": "The Result system from the Kotlin Programming Language for TypeScript",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
