@@ -1,0 +1,1 @@
+## The Result system from the Kotlin Programming Language for TypeScript
