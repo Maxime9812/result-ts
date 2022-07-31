@@ -1,24 +1,35 @@
 {
-  "name": "typescript-starter",
+  "name": "result-ts",
   "version": "1.0.0",
   "description": "The Result system from the Kotlin Programming Language for TypeScript",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
+    "test": "jest --config jestconfig.json",
     "build": "tsc",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
-    "test": "jest"
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "keywords": [
     "Result",
     "Kotlin",
     "TypeScript"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maxime9812/result-ts.git"
+  },
   "author": "Maxime Le Duc",
-  "license": "MIT",
+  "license": "ISC",
+  "homepage": "https://github.com/Maxime9812/result-ts#readme",
+  "files": ["lib/**/*"],
   "devDependencies": {
     "@types/jest": "^28.1.6",
-    "eslint-plugin-jest": "^26.6.0",
     "jest": "^28.1.3",
     "prettier": "^2.7.1",
     "ts-jest": "^28.0.7",
